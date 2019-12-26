@@ -10,6 +10,7 @@
         "php": "7.1",
         "psr/cache": "^1.0",
         "psr/log": "^1.1",
-        "vlucas/phpdotenv": "^4.1"
+        "vlucas/phpdotenv": "^4.1",
+        "jms/serializer": "^3.4"
     }
 }

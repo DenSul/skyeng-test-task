@@ -13,7 +13,7 @@ interface DataProviderInterface
     /**
      * @param array|null $request
      *
-     * @return mixed
+     * @return array|null
      */
     public function get(?array $request): ?array;
 }

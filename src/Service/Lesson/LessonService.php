@@ -30,8 +30,6 @@ class LessonService
     }
 
     /**
-     * Прикидываемся репозиторием :)
-     *
      * @param int $categoryId
      *
      * @return LessonsModel

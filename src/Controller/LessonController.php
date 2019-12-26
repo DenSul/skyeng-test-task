@@ -4,6 +4,8 @@ declare(strict_types = 1);
 
 namespace src\Controller;
 
+use JMS\Serializer\SerializerBuilder;
+use JMS\Serializer\SerializerInterface;
 use src\Service\Lesson\LessonService;
 
 class LessonController
@@ -14,6 +16,11 @@ class LessonController
     private $lessonService;
 
     /**
+     * @var SerializerInterface
+     */
+    private $serializer;
+
+    /**
      * LessonController constructor.
      *
      * @param LessonService $lessonService
@@ -21,6 +28,7 @@ class LessonController
     public function __construct(LessonService $lessonService)
     {
         $this->lessonService = $lessonService;
+        $this->serializer = SerializerBuilder::create()->build();
     }
 
     /**
@@ -44,11 +52,11 @@ class LessonController
 
         switch ($format) {
             case 'json':
-                $response = 'hello';
+                $response = $this->serializer->serialize($lessons, 'json');
                 break;
             case 'xml':
             default:
-                $response = 'ok';
+                $response = $this->serializer->serialize($lessons, 'xml');
                 break;
         }
 
