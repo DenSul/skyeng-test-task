@@ -52,10 +52,12 @@ class LessonController
 
         switch ($format) {
             case 'json':
+                header('content-type: application/xml');
                 $response = $this->serializer->serialize($lessons, 'json');
                 break;
             case 'xml':
             default:
+                header('content-type: application/json');
                 $response = $this->serializer->serialize($lessons, 'xml');
                 break;
         }
