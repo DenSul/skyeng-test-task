@@ -4,19 +4,27 @@ declare(strict_types = 1);
 
 namespace src\Service\Lesson\Model;
 
+use JMS\Serializer\Annotation\Type;
+
 class LessonModel
 {
     /**
+     * @Type("string")
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @Type("string")
+     *
      * @var string
      */
     public $date;
 
     /**
+     * @Type("string")
+     *
      * @var string|null
      */
     public $teacherName;
